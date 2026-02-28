@@ -45,6 +45,7 @@ import {
   selectCurrentTaskId,
   selectCurrentTaskParentOrCurrent,
   selectCurrentTasks,
+  selectActiveTaskIds,
   selectIsTaskDataLoaded,
   selectMainTasksWithoutTag,
   selectSelectedTask,
@@ -354,7 +355,7 @@ export class TaskService {
   }
 
   startTask(id: string): void {
-    if (this._globalConfigService.cfg?.timeTracking.isMultiTaskTrackingEnabled) {
+    if (this._globalConfigService.cfg()?.timeTracking.isMultiTaskTrackingEnabled) {
       this._store.dispatch(startTask({ id }));
     } else {
       this.setCurrentId(id);
