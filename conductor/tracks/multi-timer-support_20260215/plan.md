@@ -1,18 +1,12 @@
-# Implementation Plan - Multi-Timer Support
+# Implementation Plan - Multi-Timer Support [checkpoint: 334a061]
 
-## Phase 1: Core Logic Update (Task Model & State)
+## Phase 1: Core Logic Update (Task Model & State) [checkpoint: 334a061]
 
-- [x] Task: Create feature branch `feat/multi-timer-logic`
-- [x] Task: Update Task Model
-  - [x] Update `Task` interface to support multiple active states (if current `isCurrent` boolean is insufficient, e.g., using an array of `activeTasks`).
-  - [x] Write unit tests for the updated Task model.- [x] Task: Update NgRx State Management
-  - [x] Modify `task.reducer.ts` to allow multiple tasks to be in an active state simultaneously.
-  - [x] Update `task.actions.ts` to support starting a timer without stopping others.
-  - [x] Write unit tests for the updated reducer logic.
-- [x] Task: Verify Persistence 20bb3de
-  - [x] Ensure that multiple active tasks are correctly persisted to IndexedDB.
-  - [x] Write integration test for multi-task persistence.
-- [~] Task: Conductor - User Manual Verification 'Core Logic Update (Task Model & State)' (Protocol in workflow.md)
+- [x] Task: Create feature branch `feat/multi-timer-logic` 20bb3de
+- [x] Task: Update Task Model 334a061
+- [x] Task: Update NgRx State Management 334a061
+- [x] Task: Verify Persistence 334a061
+- [x] Task: Conductor - User Manual Verification 'Core Logic Update (Task Model & State)' 334a061
 
 ## Phase 2: UI Implementation (Dashboard Component)
 
