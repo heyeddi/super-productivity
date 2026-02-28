@@ -354,7 +354,11 @@ export class TaskService {
   }
 
   startTask(id: string): void {
-    this._store.dispatch(startTask({ id }));
+    if (this._globalConfigService.cfg?.timeTracking.isMultiTaskTrackingEnabled) {
+      this._store.dispatch(startTask({ id }));
+    } else {
+      this.setCurrentId(id);
+    }
   }
 
   stopTask(id: string): void {
